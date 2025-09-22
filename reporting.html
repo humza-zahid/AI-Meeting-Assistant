@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting Statistics - Meeting Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-brand">📅 Calendar Dashboard</a>
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                        <li><a href="reporting.html" class="nav-link active">Reporting</a></li>
+                        <li><a href="channels.html" class="nav-link">Channels</a></li>
+                        <li><a href="invite.html" class="nav-link">Invite</a></li>
+                        <li><a href="auth.html" class="nav-link">Auth</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <!-- Header Section -->
+                <div class="reporting-header">
+                    <h1 style="font-size: 2.25rem; font-weight: 700; margin-bottom: var(--space-4);">📊 AI Meeting Intelligence Analytics</h1>
+                    <p style="color: var(--text-secondary); font-size: 1.05rem; max-width: 640px; margin: 0 auto var(--space-6);">
+                        Comprehensive insights into meeting productivity, AI-generated summaries, action item tracking, and team collaboration patterns powered by advanced meeting intelligence.
+                    </p>
+                    
+                    <!-- Time Period Filter -->
+                    <div style="display: flex; justify-content: center; gap: var(--space-2); margin-bottom: var(--space-6);">
+                        <button class="btn btn-outline">Last 7 Days</button>
+                        <button class="btn btn-primary">Last 30 Days</button>
+                        <button class="btn btn-outline">Last Quarter</button>
+                        <button class="btn btn-outline">Custom Range</button>
+                    </div>
+                </div>
+
+                <!-- Core AI Performance Metrics -->
+                <div class="reporting-grid" style="margin-bottom: var(--space-8);">
+                    <div class="reporting-card">
+                        <div class="metric-title">Meetings Processed</div>
+                        <div class="metric-value">127</div>
+                        <div class="metric-footnote">↑ 23% vs previous period</div>
+                        <div style="margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.8rem;">
+                            100% AI summary success rate
+                        </div>
+                    </div>
+                    
+                    <div class="reporting-card">
+                        <div class="metric-title">Action Items Extracted</div>
+                        <div class="metric-value">342</div>
+                        <div class="metric-footnote">289 auto-assigned to participants</div>
+                        <div style="margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.8rem;">
+                            84% assignment accuracy
+                        </div>
+                    </div>
+                    
+                    <div class="reporting-card">
+                        <div class="metric-title">Processing Time</div>
+                        <div class="metric-value">2.3m</div>
+                        <div class="metric-footnote">↓ 35% faster than baseline</div>
+                        <div style="margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.8rem;">
+                            Average per meeting
+                        </div>
+                    </div>
+                    
+                    <div class="reporting-card" style="background: linear-gradient(135deg, var(--primary-light) 0%, rgba(37, 99, 235, 0.05) 100%); border-color: var(--primary-color);">
+                        <div class="metric-title">AI Confidence Score</div>
+                        <div class="metric-value" style="color: var(--primary-color);">94.2%</div>
+                        <div class="metric-footnote">Average across all summaries</div>
+                        <div style="margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--primary-color); color: var(--primary-color); font-size: 0.8rem;">
+                            High accuracy standard
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Analytics Section -->
+                <div class="reporting-card" style="margin-bottom: var(--space-6);">
+                    <h2 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+                        🧠 AI Performance Insights
+                    </h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-4);">
+                        <div style="text-align: center; padding: var(--space-4); background: var(--background-secondary); border-radius: 8px;">
+                            <div style="font-size: var(--font-size-lg); font-weight: 600; color: var(--text-primary);">1,247</div>
+                            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Key Topics Identified</div>
+                        </div>
+                        <div style="text-align: center; padding: var(--space-4); background: var(--background-secondary); border-radius: 8px;">
+                            <div style="font-size: var(--font-size-lg); font-weight: 600; color: var(--success-color);">+0.73</div>
+                            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Average Sentiment Score</div>
+                        </div>
+                        <div style="text-align: center; padding: var(--space-4); background: var(--background-secondary); border-radius: 8px;">
+                            <div style="font-size: var(--font-size-lg); font-weight: 600; color: var(--text-primary);">18</div>
+                            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Topic Categories</div>
+                        </div>
+                        <div style="text-align: center; padding: var(--space-4); background: var(--background-secondary); border-radius: 8px;">
+                            <div style="font-size: var(--font-size-lg); font-weight: 600; color: var(--primary-color);">3.2min</div>
+                            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Follow-up Email Speed</div>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);">
+                        <div>
+                            <h3 style="margin-bottom: var(--space-3); color: var(--text-primary);">Sentiment Analysis Breakdown</h3>
+                            <div style="margin-bottom: var(--space-2);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                    <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Positive</span>
+                                    <span style="font-weight: 600; color: var(--success-color);">72%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 72%; height: 100%; background: var(--success-color);"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: var(--space-2);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                    <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Neutral</span>
+                                    <span style="font-weight: 600; color: var(--text-secondary);">21%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 21%; height: 100%; background: var(--text-secondary);"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                    <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Requires Attention</span>
+                                    <span style="font-weight: 600; color: var(--warning-color);">7%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 7%; height: 100%; background: var(--warning-color);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="margin-bottom: var(--space-3); color: var(--text-primary);">Top Meeting Categories</h3>
+                            <div style="margin-bottom: var(--space-2);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                    <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Product Planning</span>
+                                    <span style="font-weight: 600; color: var(--text-primary);">32%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 32%; height: 100%; background: var(--primary-color);"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: var(--space-2);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                    <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Engineering Sync</span>
+                                    <span style="font-weight: 600; color: var(--text-primary);">28%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 28%; height: 100%; background: var(--info-color);"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: var(--space-2);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                    <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Client Meetings</span>
+                                    <span style="font-weight: 600; color: var(--text-primary);">21%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 21%; height: 100%; background: var(--success-color);"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                    <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Strategy Sessions</span>
+                                    <span style="font-weight: 600; color: var(--text-primary);">19%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 19%; height: 100%; background: var(--warning-color);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Items Performance -->
+                <div class="reporting-card" style="margin-bottom: var(--space-6);">
+                    <h2 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+                        🎯 Action Item Analytics
+                    </h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-4);">
+                        <div style="background: var(--success-light); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--success-color);">
+                            <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+                                <span style="font-size: 1.5rem;">✓</span>
+                                <span style="font-weight: 600; color: var(--success-color);">Completion Rate</span>
+                            </div>
+                            <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--success-color);">76%</div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">Action items completed on time</div>
+                        </div>
+                        
+                        <div style="background: var(--info-light); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--info-color);">
+                            <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+                                <span style="font-size: 1.5rem;">🤖</span>
+                                <span style="font-weight: 600; color: var(--info-color);">AI Auto-Assignment</span>
+                            </div>
+                            <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--info-color);">84%</div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">Successfully matched to right participants</div>
+                        </div>
+                        
+                        <div style="background: var(--warning-light); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--warning-color);">
+                            <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+                                <span style="font-size: 1.5rem;">⏱</span>
+                                <span style="font-weight: 600; color: var(--warning-color);">Avg. Completion Time</span>
+                            </div>
+                            <div style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--warning-color);">3.2 days</div>
+                            <div style="color: var(--text-muted); font-size: var(--font-size-sm);">18% faster than manual assignment</div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--background-secondary); padding: var(--space-4); border-radius: 8px;">
+                        <h3 style="margin-bottom: var(--space-3); color: var(--text-primary);">AI Insights & Recommendations</h3>
+                        <ul style="color: var(--text-secondary); line-height: 1.6; list-style-type: none; padding: 0;">
+                            <li style="display: flex; align-items: start; gap: var(--space-2); margin-bottom: var(--space-2);">
+                                <span style="color: var(--primary-color);">💡</span>
+                                <span>Engineering team shows 91% completion rate for AI-assigned tasks vs 67% for manually assigned ones.</span>
+                            </li>
+                            <li style="display: flex; align-items: start; gap: var(--space-2); margin-bottom: var(--space-2);">
+                                <span style="color: var(--success-color);">📊</span>
+                                <span>Meetings with AI summaries have 15% higher follow-up completion rates than those without.</span>
+                            </li>
+                            <li style="display: flex; align-items: start; gap: var(--space-2); margin-bottom: var(--space-2);">
+                                <span style="color: var(--info-color);">⚡</span>
+                                <span>Clear audio quality reduces AI processing time by 40% and improves summary accuracy.</span>
+                            </li>
+                            <li style="display: flex; align-items: start; gap: var(--space-2);">
+                                <span style="color: var(--warning-color);">🎯</span>
+                                <span>Consider shorter meetings on Fridays - they run 23% longer than average with same outcomes.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Meeting Trends & Patterns -->
+                <div class="reporting-card" style="margin-bottom: var(--space-6);">
+                    <h2 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+                        📈 Meeting Trends & Collaboration Patterns
+                    </h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-bottom: var(--space-4);">
+                        <div>
+                            <h3 style="margin-bottom: var(--space-3); color: var(--text-primary);">Peak Collaboration Times</h3>
+                            <div style="background: var(--background-secondary); padding: var(--space-4); border-radius: 8px;">
+                                <div style="margin-bottom: var(--space-3);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                        <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Tuesday 2PM-4PM</span>
+                                        <span style="font-weight: 600; color: var(--text-primary);">34 meetings</span>
+                                    </div>
+                                    <div style="width: 100%; height: 12px; background: var(--border-color); border-radius: 6px; overflow: hidden;">
+                                        <div style="width: 85%; height: 100%; background: var(--primary-color);"></div>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: var(--space-3);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                        <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Thursday 10AM-12PM</span>
+                                        <span style="font-weight: 600; color: var(--text-primary);">28 meetings</span>
+                                    </div>
+                                    <div style="width: 100%; height: 12px; background: var(--border-color); border-radius: 6px; overflow: hidden;">
+                                        <div style="width: 70%; height: 100%; background: var(--info-color);"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-1);">
+                                        <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Monday 9AM-11AM</span>
+                                        <span style="font-weight: 600; color: var(--text-primary);">22 meetings</span>
+                                    </div>
+                                    <div style="width: 100%; height: 12px; background: var(--border-color); border-radius: 6px; overflow: hidden;">
+                                        <div style="width: 55%; height: 100%; background: var(--success-color);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="margin-bottom: var(--space-3); color: var(--text-primary);">Team Participation Stats</h3>
+                            <div style="background: var(--background-secondary); padding: var(--space-4); border-radius: 8px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+                                    <span style="color: var(--text-secondary);">Average Meeting Size</span>
+                                    <span style="font-weight: 600; color: var(--text-primary);">6.4 people</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+                                    <span style="color: var(--text-secondary);">On-time Join Rate</span>
+                                    <span style="font-weight: 600; color: var(--success-color);">87%</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+                                    <span style="color: var(--text-secondary);">Active Participants</span>
+                                    <span style="font-weight: 600; color: var(--text-primary);">89 unique</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+                                    <span style="color: var(--text-secondary);">Teams Using AI Assistant</span>
+                                    <span style="font-weight: 600; color: var(--text-primary);">12 active</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-secondary);">Languages Detected</span>
+                                    <span style="font-weight: 600; color: var(--text-primary);">7 languages</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--primary-light); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--primary-color);">
+                        <h3 style="margin-bottom: var(--space-3); color: var(--primary-color);">Key Collaboration Insights</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); color: var(--text-secondary);">
+                            <div>
+                                <strong style="color: var(--primary-color);">Most Discussed Topics:</strong> Product launch readiness, customer feedback loops, performance optimization
+                            </div>
+                            <div>
+                                <strong style="color: var(--primary-color);">Follow-up Performance:</strong> 119 emails sent with avg 3.2min delivery time post-meeting
+                            </div>
+                            <div>
+                                <strong style="color: var(--primary-color);">Recording Insights:</strong> 156.3 hours processed across 18 project teams
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Meeting Summaries -->
+                <div class="reporting-list" style="margin-top: var(--space-6);">
+                    <div class="card-header" style="padding: var(--space-4); background: var(--background-secondary); border-bottom: 1px solid var(--border-color);">
+                        <h2 style="margin: 0; display: flex; align-items: center; gap: var(--space-2);">
+                            📝 Recent AI-Processed Meetings
+                        </h2>
+                    </div>
+                    
+                    <div style="overflow-x: auto;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Meeting Title</th>
+                                    <th>Date</th>
+                                    <th>Duration</th>
+                                    <th>Participants</th>
+                                    <th>AI Status</th>
+                                    <th>Key Topics</th>
+                                    <th>Actions Generated</th>
+                                    <th>Summary Quality</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: 600;">Q4 Strategy Planning</td>
+                                    <td>Sep 20</td>
+                                    <td>85 min</td>
+                                    <td>14</td>
+                                    <td><span class="status status-success">Processed</span></td>
+                                    <td>Budget, Roadmap, OKRs</td>
+                                    <td>12</td>
+                                    <td><span style="color: var(--success-color); font-weight: 600;">96%</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600;">Product Feature Review</td>
+                                    <td>Sep 19</td>
+                                    <td>62 min</td>
+                                    <td>11</td>
+                                    <td><span class="status status-success">Processed</span></td>
+                                    <td>UX, Performance, Launch</td>
+                                    <td>8</td>
+                                    <td><span style="color: var(--success-color); font-weight: 600;">94%</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600;">Customer Feedback Session</td>
+                                    <td>Sep 18</td>
+                                    <td>45 min</td>
+                                    <td>9</td>
+                                    <td><span class="status status-warning">Processing</span></td>
+                                    <td>Satisfaction, Features</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600;">Engineering Standup</td>
+                                    <td>Sep 18</td>
+                                    <td>28 min</td>
+                                    <td>8</td>
+                                    <td><span class="status status-success">Processed</span></td>
+                                    <td>Sprint, Blockers, Deploy</td>
+                                    <td>6</td>
+                                    <td><span style="color: var(--success-color); font-weight: 600;">92%</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600;">Sales Pipeline Review</td>
+                                    <td>Sep 17</td>
+                                    <td>50 min</td>
+                                    <td>7</td>
+                                    <td><span class="status status-error">Failed</span></td>
+                                    <td>Audio quality issues</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600;">Marketing Growth Lab</td>
+                                    <td>Sep 16</td>
+                                    <td>45 min</td>
+                                    <td>8</td>
+                                    <td><span class="status status-success">Processed</span></td>
+                                    <td>A/B Tests, Metrics, ROI</td>
+                                    <td>9</td>
+                                    <td><span style="color: var(--success-color); font-weight: 600;">95%</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600;">Client Advisory Board</td>
+                                    <td>Sep 15</td>
+                                    <td>70 min</td>
+                                    <td>11</td>
+                                    <td><span class="status status-success">Processed</span></td>
+                                    <td>Feedback, Roadmap</td>
+                                    <td>7</td>
+                                    <td><span style="color: var(--success-color); font-weight: 600;">93%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- System Performance Footer -->
+                <div class="reporting-card" style="margin-top: var(--space-6);">
+                    <h2 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+                        ⚙️ System Performance & Health
+                    </h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-4);">
+                        <div style="text-align: center;">
+                            <div style="font-weight: 600; color: var(--success-color);">99.2%</div>
+                            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">System Uptime</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-weight: 600; color: var(--info-color);">142ms</div>
+                            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">API Response</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-weight: 600; color: var(--text-primary);">2.1TB</div>
+                            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Data Processed</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-weight: 600; color: var(--warning-color);">3</div>
+                            <div style="color: var(--text-secondary); font-size: var(--font-size-sm);">Failed Processes</div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--background-secondary); padding: var(--space-3); border-radius: 8px; margin-bottom: var(--space-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Last Updated</span>
+                            <span style="font-weight: 500; color: var(--text-primary);">2 minutes ago</span>
+                        </div>
+                    </div>
+
+                    <!-- Export Options -->
+                    <div style="display: flex; gap: var(--space-3); justify-content: center; padding-top: var(--space-4); border-top: 1px solid var(--border-color);">
+                        <button class="btn btn-primary">📊 Export Full Report</button>
+                        <button class="btn btn-outline">📈 Generate Charts</button>
+                        <button class="btn btn-outline">📧 Email Summary</button>
+                        <button class="btn btn-outline">📅 Schedule Report</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

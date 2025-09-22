@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Meeting Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-brand">📅 Calendar Dashboard</a>
+                    <ul class="nav-links">
+                        <li><a href="login.html" class="nav-link active">Login</a></li>
+                        <li><a href="signup.html" class="nav-link">Sign Up</a></li>
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                        <li><a href="reporting.html" class="nav-link">Reporting</a></li>
+                        <li><a href="channels.html" class="nav-link">Channels</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="auth-wrapper">
+                <div class="auth-card">
+                    <div>
+                        <h1>Welcome back</h1>
+                        <p>Log in to access your calendar assistant experience.</p>
+                    </div>
+
+                    <form class="auth-form" id="login-form">
+                        <label>
+                            Email address
+                            <input type="email" id="login-email" placeholder="you@example.com" required>
+                        </label>
+                        <label>
+                            Password
+                            <input type="password" id="login-password" placeholder="Enter your password" required>
+                        </label>
+                        <div class="auth-remember">
+                            <label style="display: flex; align-items: center; gap: var(--space-2);">
+                                <input type="checkbox" id="login-remember">
+                                Remember me
+                            </label>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none;">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        New to the assistant? <a href="signup.html">Create an account</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        if (loginForm) {
+            loginForm.addEventListener('submit', event => {
+                event.preventDefault();
+
+                const email = document.getElementById('login-email').value.trim();
+                const password = document.getElementById('login-password').value.trim();
+
+                if (!email || !password) {
+                    alert('Please enter both email and password.');
+                    return;
+                }
+
+                const remember = document.getElementById('login-remember').checked;
+                const userSession = { email, remember, loggedInAt: new Date().toISOString() };
+                try {
+                    if (remember) {
+                        localStorage.setItem('assistantUser', JSON.stringify(userSession));
+                    } else {
+                        sessionStorage.setItem('assistantUser', JSON.stringify(userSession));
+                    }
+                } catch (error) {
+                    console.warn('Unable to persist session data:', error);
+                }
+
+                window.location.href = 'http://localhost:8080/';
+            });
+        }
+    </script>
+</body>
+</html>
