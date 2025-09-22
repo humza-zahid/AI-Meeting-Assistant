@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Summary Report</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .summary-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .summary-header {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .summary-header h1 {
+            margin: 0;
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .summary-header p {
+            margin: 0;
+            color: var(--text-secondary);
+            max-width: 640px;
+        }
+
+        .summary-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+        }
+
+        .summary-frame {
+            position: relative;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            min-height: 600px;
+            background: var(--background-secondary);
+        }
+
+        .summary-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: var(--card-background);
+        }
+
+        .summary-fallback {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-6);
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.82), rgba(37, 99, 235, 0.85));
+            color: var(--text-white);
+        }
+
+        .summary-fallback h2 {
+            margin: 0;
+            font-size: var(--font-size-xl);
+        }
+
+        .summary-fallback p {
+            margin: 0;
+            max-width: 420px;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 768px) {
+            .summary-frame {
+                min-height: 420px;
+            }
+
+            .summary-header h1 {
+                font-size: var(--font-size-2xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-brand">📄 Meeting Summary</a>
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                        <li><a href="reporting.html" class="nav-link">Reporting</a></li>
+                        <li><a href="channels.html" class="nav-link">Channels</a></li>
+                        <li><a href="invite.html" class="nav-link">Invite</a></li>
+                        <li><a href="auth.html" class="nav-link">Auth</a></li>
+                        <li><a href="summary.html" class="nav-link active">Summary</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <section class="card summary-wrapper">
+                    <div class="summary-header">
+                        <a href="dashboard.html" class="btn btn-outline btn-sm" style="width: fit-content;">
+                            ← Back to dashboard
+                        </a>
+                        <div>
+                            <h1>Meeting Summary Report</h1>
+                            <p>Review the AI-generated PDF summary for your most recent meeting. Download it for distribution or reference.</p>
+                        </div>
+                        <div class="summary-actions">
+                            <a id="summary-download" href="#" class="btn btn-primary" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: var(--space-1);">
+                                ⬇️ Download PDF
+                            </a>
+                            <span style="font-size: var(--font-size-sm); color: var(--text-secondary);">
+                                Source: Google Meet AI assistant export
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="summary-frame">
+                        <iframe id="summary-pdf" title="Meeting summary PDF"></iframe>
+                        <div id="summary-fallback" class="summary-fallback" hidden>
+                            <h2>Unable to display PDF</h2>
+                            <p>Please use the download button above to access the summary directly. Ensure the PDF exists at the specified path.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const ABSOLUTE_PDF_PATH = '/home/zylo/Desktop/meet/calendar-updated-2-latest/main_calendar/auth2.0_simple/Google Meet Summary Report.pdf';
+        const RELATIVE_PDF_PATH = 'Google Meet Summary Report.pdf';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const pdfFrame = document.getElementById('summary-pdf');
+            const fallback = document.getElementById('summary-fallback');
+            const downloadLink = document.getElementById('summary-download');
+            const resolvedPdf = resolvePdfUrl();
+
+            if (resolvedPdf) {
+                pdfFrame.src = resolvedPdf;
+                downloadLink.href = resolvedPdf;
+            } else {
+                fallback.hidden = false;
+                downloadLink.classList.add('btn-disabled');
+                downloadLink.setAttribute('aria-disabled', 'true');
+            }
+
+            pdfFrame.addEventListener('error', () => {
+                fallback.hidden = false;
+            });
+        });
+
+        function resolvePdfUrl() {
+            if (window.location.protocol === 'file:') {
+                return `file://${encodeURI(ABSOLUTE_PDF_PATH)}`;
+            }
+
+            return encodeURI(RELATIVE_PDF_PATH);
+        }
+    </script>
+</body>
+</html>

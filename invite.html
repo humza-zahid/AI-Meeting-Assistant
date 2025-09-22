@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Teammates - Meeting Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-brand">📅 Calendar Dashboard</a>
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                        <li><a href="reporting.html" class="nav-link">Reporting</a></li>
+                        <li><a href="channels.html" class="nav-link">Channels</a></li>
+                        <li><a href="invite.html" class="nav-link active">Invite</a></li>
+                        <li><a href="auth.html" class="nav-link">Auth</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <section style="max-width: 720px; margin: 0 auto; text-align: center;">
+                    <h1 style="font-size: 2.25rem; font-weight: 700; margin-bottom: var(--space-3); color: var(--text-primary);">
+                        🤝 Invite Your Teammates
+                    </h1>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-6); font-size: 1.05rem;">
+                        Share the AI meeting assistant with your teammates and collaborate on meeting summaries, action items, and channel discussions.
+                    </p>
+                </section>
+
+                <section class="card" style="max-width: 720px; margin: 0 auto; padding: var(--space-6);">
+                    <form id="invite-form" style="display: flex; flex-direction: column; gap: var(--space-4);">
+                        <div style="text-align: left;">
+                            <label for="invite-email" style="display: block; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-2);">
+                                Teammate Email Address
+                            </label>
+                            <input id="invite-email" name="email" type="email" class="form-input" placeholder="teammate@example.com" required>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--space-3);">
+                            <button type="submit" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: var(--space-1);">
+                                ✉️ Send Invite
+                            </button>
+                            <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">
+                                We’ll email your teammate a link to join the workspace.
+                            </span>
+                        </div>
+                    </form>
+
+                    <div id="invite-status" aria-live="polite" style="min-height: 3rem;"></div>
+                </section>
+
+                <section style="max-width: 720px; margin: var(--space-8) auto 0 auto;">
+                    <div class="card" style="padding: var(--space-5); background: var(--background-secondary);">
+                        <h2 style="margin-bottom: var(--space-3); font-size: var(--font-size-lg);">Need inspiration?</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">
+                            Invite project managers, team leads, or collaborators so everyone stays aligned with meeting summaries and action items delivered straight to their inbox.
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-2);">
+                            <li style="display: flex; align-items: center; gap: var(--space-2); color: var(--text-secondary);">
+                                <span>✅</span>
+                                <span>Automated summaries after every meeting</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: var(--space-2); color: var(--text-secondary);">
+                                <span>✅</span>
+                                <span>Shared action items to keep the team on track</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: var(--space-2); color: var(--text-secondary);">
+                                <span>✅</span>
+                                <span>Channel notifications for real-time collaboration</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('invite-form');
+            const emailInput = document.getElementById('invite-email');
+            const statusContainer = document.getElementById('invite-status');
+
+            if (!form || !emailInput || !statusContainer) {
+                return;
+            }
+
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+
+                const email = emailInput.value.trim();
+                if (!email) {
+                    return;
+                }
+
+                statusContainer.innerHTML = '';
+
+                const alert = document.createElement('div');
+                alert.className = 'alert alert-success';
+                alert.style.display = 'flex';
+                alert.style.alignItems = 'center';
+                alert.style.gap = 'var(--space-2)';
+                alert.style.marginTop = 'var(--space-4)';
+
+                const icon = document.createElement('span');
+                icon.style.fontSize = '1.2rem';
+                icon.textContent = '✅';
+
+                const message = document.createElement('span');
+                message.textContent = 'Invite has been sent to ';
+
+                const emailHighlight = document.createElement('strong');
+                emailHighlight.textContent = email;
+
+                message.appendChild(emailHighlight);
+                alert.appendChild(icon);
+                alert.appendChild(message);
+                statusContainer.appendChild(alert);
+
+                emailInput.value = '';
+                emailInput.focus();
+            });
+        });
+    </script>
+</body>
+</html>

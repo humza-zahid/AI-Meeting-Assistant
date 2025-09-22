@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channels - Meeting Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-brand">📅 Calendar Dashboard</a>
+                    <ul class="nav-links">
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                        <li><a href="reporting.html" class="nav-link">Reporting</a></li>
+                        <li><a href="channels.html" class="nav-link active">Channels</a></li>
+                        <li><a href="invite.html" class="nav-link">Invite</a></li>
+                        <li><a href="auth.html" class="nav-link">Auth</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main" style="padding: 0;">
+            <div class="channels-layout">
+                <!-- Enhanced Sidebar -->
+                <aside class="channels-sidebar">
+                    <!-- Workspace Header -->
+                    <div style="padding: var(--space-4); border-bottom: 1px solid var(--border-color); background: var(--background-secondary);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-2);">
+                            <h2 style="margin: 0; font-size: var(--font-size-lg);">TechCorp Workspace</h2>
+                            <button style="background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: var(--space-1);">⚙️</button>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--space-2);">
+                            <div style="width: 8px; height: 8px; background: var(--success-color); border-radius: 50%;"></div>
+                            <span style="font-size: var(--font-size-sm); color: var(--text-secondary);">Online</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div style="padding: var(--space-3);">
+                        <button class="btn btn-primary" style="width: 100%; font-size: var(--font-size-sm); padding: var(--space-2) var(--space-3);">
+                            ➕ Start New Channel
+                        </button>
+                    </div>
+
+                    <!-- Channel Categories -->
+                    <div style="flex: 1; overflow-y: auto;">
+                        <!-- AI Meeting Channels -->
+                        <div style="margin-bottom: var(--space-4);">
+                            <div style="padding: var(--space-2) var(--space-4); display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                                <span style="font-size: var(--font-size-sm); font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">🤖 AI Meeting Channels</span>
+                                <span style="color: var(--text-muted);">▼</span>
+                            </div>
+                            <div class="channel-list">
+                                <a href="#" class="channel-item active">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <span style="color: var(--text-muted);">#</span>
+                                        <span>meeting-summaries</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: var(--space-1);">
+                                        <span style="width: 6px; height: 6px; background: var(--success-color); border-radius: 50%;"></span>
+                                        <span style="font-size: 0.75rem; color: var(--success-color);">Live</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <span style="color: var(--text-muted);">#</span>
+                                        <span>action-items</span>
+                                    </div>
+                                    <span style="background: var(--error-color); color: white; font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 8px; min-width: 16px; text-align: center;">12</span>
+                                </a>
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <span style="color: var(--text-muted);">#</span>
+                                        <span>transcript-reviews</span>
+                                    </div>
+                                    <span style="background: var(--primary-color); color: white; font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 8px; min-width: 16px; text-align: center;">3</span>
+                                </a>
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <span style="color: var(--text-muted);">#</span>
+                                        <span>ai-insights</span>
+                                    </div>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">7 new</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team Channels -->
+                        <div style="margin-bottom: var(--space-4);">
+                            <div style="padding: var(--space-2) var(--space-4); display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                                <span style="font-size: var(--font-size-sm); font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">👥 Team Channels</span>
+                                <span style="color: var(--text-muted);">▼</span>
+                            </div>
+                            <div class="channel-list">
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <span style="color: var(--text-muted);">#</span>
+                                        <span>product-sync</span>
+                                    </div>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">5 new</span>
+                                </a>
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <span style="color: var(--text-muted);">#</span>
+                                        <span>engineering-updates</span>
+                                    </div>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Today</span>
+                                </a>
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <span style="color: var(--text-muted);">#</span>
+                                        <span>customer-feedback</span>
+                                    </div>
+                                    <span style="background: var(--warning-color); color: white; font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 8px; min-width: 16px; text-align: center;">2</span>
+                                </a>
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <span style="color: var(--text-muted);">#</span>
+                                        <span>leadership-brief</span>
+                                    </div>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Pinned</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Direct Messages -->
+                        <div style="margin-bottom: var(--space-4);">
+                            <div style="padding: var(--space-2) var(--space-4); display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                                <span style="font-size: var(--font-size-sm); font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">💬 Direct Messages</span>
+                                <span style="color: var(--text-muted);">▼</span>
+                            </div>
+                            <div class="channel-list">
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <div style="width: 8px; height: 8px; background: var(--success-color); border-radius: 50%;"></div>
+                                        <span>Meeting Assistant Bot</span>
+                                    </div>
+                                    <span style="background: var(--info-color); color: white; font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 8px; min-width: 16px; text-align: center;">1</span>
+                                </a>
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <div style="width: 8px; height: 8px; background: var(--success-color); border-radius: 50%;"></div>
+                                        <span>Sarah Chen</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <div style="width: 8px; height: 8px; background: var(--warning-color); border-radius: 50%;"></div>
+                                        <span>Mike Rodriguez</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="channel-item">
+                                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                                        <div style="width: 8px; height: 8px; background: var(--text-muted); border-radius: 50%;"></div>
+                                        <span>Alex Kumar</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Profile Footer -->
+                    <div style="padding: var(--space-3); border-top: 1px solid var(--border-color); background: var(--background-secondary);">
+                        <div style="display: flex; align-items: center; gap: var(--space-3);">
+                            <div style="width: 32px; height: 32px; background: var(--primary-color); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                                HM
+                            </div>
+                            <div style="flex: 1; min-width: 0;">
+                                <div style="font-weight: 600; color: var(--text-primary); font-size: var(--font-size-sm);">Hurak Meeting Assistant</div>
+                                <div style="font-size: 0.75rem; color: var(--text-secondary);">Available</div>
+                            </div>
+                            <button style="background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: var(--space-1);">⚙️</button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Enhanced Main Chat Area -->
+                <section class="channels-main">
+                    <!-- Enhanced Channel Header -->
+                    <div class="channel-header">
+                        <div style="display: flex; align-items: center; gap: var(--space-3);">
+                            <div>
+                                <h1 style="display: flex; align-items: center; gap: var(--space-2); margin: 0;">
+                                    <span style="color: var(--text-muted);">#</span>
+                                    meeting-summaries
+                                </h1>
+                                <p style="color: var(--text-secondary); margin: 0; font-size: var(--font-size-sm);">
+                                    Real-time AI-generated meeting summaries and insights • 847 members
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--space-2);">
+                            <span class="status status-success" style="font-size: 0.75rem;">🔴 Recording Live</span>
+                            <button style="background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: var(--space-2);">🔍</button>
+                            <button style="background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: var(--space-2);">📌</button>
+                            <button style="background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: var(--space-2);">👥</button>
+                            <button style="background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: var(--space-2);">⚙️</button>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Messages Area -->
+                    <div class="channel-messages">
+                        <!-- Date Separator -->
+                        <div style="text-align: center; margin: var(--space-4) 0;">
+                            <div style="background: var(--background-secondary); padding: var(--space-1) var(--space-3); border-radius: 12px; display: inline-block;">
+                                <span style="font-size: var(--font-size-sm); font-weight: 500; color: var(--text-secondary);">Today</span>
+                            </div>
+                        </div>
+
+                        <!-- AI Bot Message - Meeting Started -->
+                        <div class="channel-message">
+                            <div class="channel-avatar" style="background: linear-gradient(135deg, var(--primary-color), var(--info-color)); color: white;">🤖</div>
+                            <div class="channel-content">
+                                <header style="display: flex; align-items: center; gap: var(--space-2);">
+                                    <strong style="color: var(--primary-color);">Meeting Assistant Bot</strong>
+                                    <span style="background: var(--primary-light); color: var(--primary-color); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 500;">BOT</span>
+                                    <span style="color: var(--text-muted); font-size: var(--font-size-sm);">Today at 9:00 AM</span>
+                                </header>
+                                <div style="background: var(--info-light); padding: var(--space-3); border-radius: 8px; border-left: 3px solid var(--info-color); margin-top: var(--space-2);">
+                                    <p style="margin: 0; color: var(--text-primary);">
+                                        <strong>🎥 Meeting Started:</strong> "Q4 Product Strategy Review"
+                                        <br>📍 <em>Conference Room B / Zoom Link</em>
+                                        <br>👥 <strong>14 participants</strong> • Recording in progress
+                                        <br>⏰ Started at 9:00 AM • Estimated duration: 90 minutes
+                                    </p>
+                                    <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2);">
+                                        <button class="btn btn-outline" style="font-size: 0.75rem; padding: var(--space-1) var(--space-2);">📝 Join Live Notes</button>
+                                        <button class="btn btn-outline" style="font-size: 0.75rem; padding: var(--space-1) var(--space-2);">🔗 Join Meeting</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member Response -->
+                        <div class="channel-message">
+                            <div class="channel-avatar" style="background: var(--success-color); color: white;">SC</div>
+                            <div class="channel-content">
+                                <header style="display: flex; align-items: center; gap: var(--space-2);">
+                                    <strong>Sarah Chen</strong>
+                                    <span style="background: var(--success-light); color: var(--success-color); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 500;">PRODUCT MANAGER</span>
+                                    <span style="color: var(--text-muted); font-size: var(--font-size-sm);">Today at 9:02 AM</span>
+                                </header>
+                                <p style="margin-top: var(--space-2);">Perfect timing! I'm particularly interested in the AI insights on customer sentiment trends. Bot, can you flag any mentions of competitive analysis during the discussion?</p>
+                                <div style="margin-top: var(--space-2);">
+                                    <button style="background: none; border: none; color: var(--text-muted); cursor: pointer; margin-right: var(--space-3);">👍 2</button>
+                                    <button style="background: none; border: none; color: var(--text-muted); cursor: pointer; margin-right: var(--space-3);">💬 Reply</button>
+                                    <button style="background: none; border: none; color: var(--text-muted); cursor: pointer;">🔗 Share</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Real-time Update -->
+                        <div class="channel-message">
+                            <div class="channel-avatar" style="background: linear-gradient(135deg, var(--primary-color), var(--info-color)); color: white;">🤖</div>
+                            <div class="channel-content">
+                                <header style="display: flex; align-items: center; gap: var(--space-2);">
+                                    <strong style="color: var(--primary-color);">Meeting Assistant Bot</strong>
+                                    <span style="background: var(--primary-light); color: var(--primary-color); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 500;">BOT</span>
+                                    <span style="color: var(--text-muted); font-size: var(--font-size-sm);">Today at 9:15 AM</span>
+                                </header>
+                                <div style="background: var(--success-light); padding: var(--space-3); border-radius: 8px; border-left: 3px solid var(--success-color); margin-top: var(--space-2);">
+                                    <p style="margin: 0 0 var(--space-2) 0; color: var(--text-primary);">
+                                        <strong>📊 Live Meeting Insights (15 minutes in):</strong>
+                                    </p>
+                                    <div style="display: grid; gap: var(--space-2);">
+                                        <div style="background: white; padding: var(--space-2); border-radius: 6px;">
+                                            <strong>🎯 Key Topics Discussed:</strong> Q4 roadmap priorities, budget allocation, competitive positioning
+                                        </div>
+                                        <div style="background: white; padding: var(--space-2); border-radius: 6px;">
+                                            <strong>✅ Decisions Made:</strong> Extend beta testing by 2 weeks, hire additional QA resources
+                                        </div>
+                                        <div style="background: white; padding: var(--space-2); border-radius: 6px;">
+                                            <strong>⚠️ Action Items:</strong> 3 items assigned • Sarah: market analysis • Mike: resource planning • Alex: technical review
+                                        </div>
+                                        <div style="background: white; padding: var(--space-2); border-radius: 6px;">
+                                            <strong>📈 Sentiment:</strong> Positive (78%) • Productive discussion tone detected
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: var(--space-2);">
+                                    <button style="background: none; border: none; color: var(--text-muted); cursor: pointer; margin-right: var(--space-3);">🚀 4</button>
+                                    <button style="background: none; border: none; color: var(--text-muted); cursor: pointer; margin-right: var(--space-3);">💬 2 replies</button>
+                                    <button style="background: none; border: none; color: var(--text-muted); cursor: pointer;">📌 Pin</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member Comment -->
+                        <div class="channel-message">
+                            <div class="channel-avatar" style="background: var(--warning-color); color: white;">MR</div>
+                            <div class="channel-content">
+                                <header style="display: flex; align-items: center; gap: var(--space-2);">
+                                    <strong>Mike Rodriguez</strong>
+                                    <span style="background: var(--warning-light); color: var(--warning-color); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 500;">ENGINEERING LEAD</span>
+                                    <span style="color: var(--text-muted); font-size: var(--font-size-sm);">Today at 9:18 AM</span>
+                                </header>
+                                <p style="margin-top: var(--space-2);">Great insights! The technical review action item is already in my calendar for Thursday. Bot is getting really good at understanding context and assigning the right tasks to the right people. 👏</p>
+                                <div style="background: var(--background-secondary); padding: var(--space-2); border-radius: 6px; margin-top: var(--space-2); border-left: 3px solid var(--text-muted);">
+                                    <strong style="color: var(--text-secondary); font-size: var(--font-size-sm);">Replying to Meeting Assistant Bot</strong>
+                                    <p style="margin: var(--space-1) 0 0 0; font-size: var(--font-size-sm); color: var(--text-secondary);">Alex: technical review</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Another AI Update -->
+                        <div class="channel-message">
+                            <div class="channel-avatar" style="background: linear-gradient(135deg, var(--primary-color), var(--info-color)); color: white;">🤖</div>
+                            <div class="channel-content">
+                                <header style="display: flex; align-items: center; gap: var(--space-2);">
+                                    <strong style="color: var(--primary-color);">Meeting Assistant Bot</strong>
+                                    <span style="background: var(--primary-light); color: var(--primary-color); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 500;">BOT</span>
+                                    <span style="color: var(--text-muted); font-size: var(--font-size-sm);">Today at 9:25 AM</span>
+                                </header>
+                                <div style="background: var(--warning-light); padding: var(--space-3); border-radius: 8px; border-left: 3px solid var(--warning-color); margin-top: var(--space-2);">
+                                    <p style="margin: 0; color: var(--text-primary);">
+                                        <strong>🚨 Alert:</strong> Competitive analysis discussion detected (as requested by <span style="color: var(--primary-color);">@Sarah Chen</span>)
+                                        <br><br>
+                                        <strong>📝 Key Points:</strong>
+                                        <br>• Competitor X launched similar feature last month
+                                        <br>• Our differentiation: AI-powered insights vs. manual reporting  
+                                        <br>• Timeline pressure: need to launch before Q1 2024
+                                        <br><br>
+                                        <strong>⏱️ Timestamp:</strong> 23:30 - 26:45 in recording
+                                    </p>
+                                    <div style="margin-top: var(--space-2);">
+                                        <button class="btn btn-primary" style="font-size: 0.75rem; padding: var(--space-1) var(--space-2);">🎥 Jump to Timestamp</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Response -->
+                        <div class="channel-message">
+                            <div class="channel-avatar" style="background: var(--success-color); color: white;">SC</div>
+                            <div class="channel-content">
+                                <header style="display: flex; align-items: center; gap: var(--space-2);">
+                                    <strong>Sarah Chen</strong>
+                                    <span style="background: var(--success-light); color: var(--success-color); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 500;">PRODUCT MANAGER</span>
+                                    <span style="color: var(--text-muted); font-size: var(--font-size-sm);">Today at 9:26 AM</span>
+                                </header>
+                                <p style="margin-top: var(--space-2);">Exactly what I needed! 🎯 Bot, this is incredibly helpful. Can you also track any mentions of pricing strategy in the remaining discussion?</p>
+                            </div>
+                        </div>
+
+                        <!-- Typing Indicator -->
+                        <div style="padding: var(--space-2) 0; color: var(--text-muted); font-style: italic; font-size: var(--font-size-sm);">
+                            🤖 Meeting Assistant Bot is analyzing meeting audio...
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Footer -->
+                    <div class="channel-footer">
+                        <div style="display: flex; align-items: center; gap: var(--space-2); flex: 1;">
+                            <button style="background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: var(--space-2);">📎</button>
+                            <input type="text" class="channel-input" placeholder="Message #meeting-summaries..." style="flex: 1;">
+                            <button style="background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: var(--space-2);">😊</button>
+                            <button style="background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: var(--space-2);">🎤</button>
+                        </div>
+                        <button class="btn btn-primary" style="margin-left: var(--space-2);">Send</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
